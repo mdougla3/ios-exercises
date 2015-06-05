@@ -13,10 +13,30 @@
 - (NSString *) itemMaryCanPurchaseForDollars:(NSInteger)dollars {
     NSString *itemToReturn;
 
-    /* WORK HERE */
+    if (dollars == 4) {
+        itemToReturn = @"get out of my store";
+        return itemToReturn;
+    }
+        if (dollars == 5) {
+        itemToReturn = @"have some gum";
+            return itemToReturn;
+        }
+            if (dollars == 6) {
+                itemToReturn = @"have an apple";
+                return itemToReturn;
+            }
+                if (dollars == 1000) {
+                itemToReturn = @"have an Apple computer";
+                return itemToReturn;
+                }
+                    if (dollars == 1000000000) {
+                    itemToReturn = @"have The Big Apple";
+                    return itemToReturn;
+                    }
+                    else { return nil; }
     
-    NSLog(@"For $%ld, Mary can: %@", (long)dollars, itemToReturn);
-    return itemToReturn;
+// Instead of this long code, I could use a case statement? Or just use that more useful NSLog that was printed here originally. 
+    
 }
 
 - (NSUInteger) dollarCostForAppleFlavoredVodka {
