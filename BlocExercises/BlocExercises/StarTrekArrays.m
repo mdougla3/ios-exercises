@@ -34,8 +34,6 @@
     NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS 'Worf'"];
     [worfArray filteredArrayUsingPredicate:containsWorf];
    
-    if (worfArray.count > 0)
-    {return YES;}
-    else {return NO;}
+    return worfArray.count > 0;
 }
 @end
