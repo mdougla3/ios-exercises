@@ -11,23 +11,31 @@
 @implementation StarTrekArrays
 
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
-    /* WORK HERE */
-    return @[];
+    NSArray *namesArray = [characterString componentsSeparatedByString:@";"];
+    return namesArray;
 }
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
-    /* WORK HERE */
-    return @"";
+    NSString *nameString = [characterArray componentsJoinedByString:@";"];
+    return nameString;
 }
 
 - (NSArray *) alphabeticallySortedStarTrekCharactersFromArray:(NSArray *)characterArray {
-    /* WORK HERE */
-    return @[];
+    
+    NSMutableArray *orderedArray = [[NSMutableArray alloc] initWithArray:characterArray copyItems:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    [orderedArray sortUsingDescriptors:@[sortDescriptor]];
+    return orderedArray;
 }
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
-    /* WORK HERE */
-    return NO;
+    
+    NSMutableArray *worfArray = [[NSMutableArray alloc] initWithArray:characterArray copyItems:YES];
+    NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS 'Worf'"];
+    [worfArray filteredArrayUsingPredicate:containsWorf];
+   
+    if (worfArray.count > 0)
+    {return YES;}
+    else {return NO;}
 }
-
 @end
