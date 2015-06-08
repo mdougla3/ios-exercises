@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface StuffRememberer : NSObject
+@property NSMutableArray *rememberForLaterArray;
+
 
 /*
  
