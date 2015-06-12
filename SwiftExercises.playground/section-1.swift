@@ -7,13 +7,16 @@ Strings
 */
 
 func favoriteCheeseStringWithCheese(cheese: String) -> String {
-    var cheese = "My favorite cheese is cheddar"
+    
+    var cheese = "cheddar"
+    
     return cheese
 }
 
-let fullSentence = favoriteCheeseStringWithCheese("cheddar")
+var fullSentence = favoriteCheeseStringWithCheese("cheese")
 // Make fullSentence say "My favorite cheese is cheddar."
 
+fullSentence = "My favorite cheese is " + favoriteCheeseStringWithCheese("cheese")
 
 /*
 
@@ -29,27 +32,19 @@ numberArray.append(5)
 var numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
 // Add 5 : "five" to this dictionary
 numberDictionary[5] = "five"
-
 numberDictionary
 
-/*
 
 
+//Loops
 
-Loops
-
-*/
 
 // Use a closed range loop to print 1 - 10, inclusively
-// WORK HERE
-
 for i in 1...10 {
     println(i)
 }
 
 // Use a half-closed range loop to print 1 - 10, inclusively
-// WORK HERE
-
 for i in 1..<11 {
     println(i)
 }
@@ -71,9 +66,13 @@ let characters = [worf, picard]
 
 func favoriteDrinksArrayForCharacters(characters:Array<Dictionary<String, String>>) -> Array<String> {
     // return an array of favorite drinks, like ["prune juice", "tea, Earl Grey, hot"]
-    var drinks = [picard["favorite drink"]!, worf["favorite drink"]!]
+    var newArray = [String]()
     
-    return drinks
+    for (names) in characters {
+        newArray += [names["favorite drink"]!]
+    }
+    
+    return newArray
 }
 
 let favoriteDrinks = favoriteDrinksArrayForCharacters(characters)
@@ -92,16 +91,10 @@ let strings = ["milk", "eggs", "bread", "challah"]
 
 // WORK HERE - make your function and pass `strings` in
 
-func stringWithSemiColons(groceryStrings:Array<String> ) -> String {
-    
-   var expectedOutput = ":".join(strings)
-    
-    return expectedOutput
-}
+var expectedOutput = ";" .join(strings)
 
-stringWithSemiColons(strings)
 
-//var expectedOutput = "milk;eggs;bread;challah"
+//let expectedOutput = "milk;eggs;bread;challah"
 
 /*
 
@@ -111,17 +104,4 @@ Closures
 
 let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All Berries", "Cookie Crisp"]
 
-// Use a closure to sort this array alphabetically
-
 let sortedCerealArray = sorted(cerealArray, <)
-
-
-
-
-
-
-
-
-
-
-
